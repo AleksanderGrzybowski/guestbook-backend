@@ -1,4 +1,4 @@
-package pl.kelog.guestbookbackend;
+package pl.kelog.guestbookbackend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class EntryDto {
-    Long id;
-    String username, text;
+    public final Long id;
+    public final String username, text;
 }

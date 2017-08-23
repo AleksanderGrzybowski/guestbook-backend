@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import pl.kelog.guestbookbackend.dto.EntryDto;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.hasSize;
@@ -17,7 +18,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 public class EntryControllerTest {
     
-    EntryService entryService;
+    private EntryService entryService;
     private MockMvc mockMvc;
     
     @Before
@@ -26,7 +27,6 @@ public class EntryControllerTest {
         
         this.mockMvc = standaloneSetup(new EntryController(entryService))
                 .build();
-        
     }
     
     @Test

@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
+import pl.kelog.guestbookbackend.dto.EntryDto;
 
 import java.util.List;
 
@@ -13,9 +14,8 @@ import static org.mockito.Mockito.*;
 
 public class EntryServiceTest {
     
-    EntryRepository repository;
-    EntryService entryService;
-    
+    private EntryRepository repository;
+    private EntryService entryService;
     
     @Before
     public void setup() {
@@ -48,7 +48,7 @@ public class EntryServiceTest {
         ArgumentCaptor<Entry> captor = ArgumentCaptor.forClass(Entry.class);
         Mockito.verify(repository, times(1)).save(captor.capture());
         
-        assertThat(captor.getValue().username).isEqualTo("newUsername");
-        assertThat(captor.getValue().text).isEqualTo("newText");
+        assertThat(captor.getValue().getUsername()).isEqualTo("newUsername");
+        assertThat(captor.getValue().getText()).isEqualTo("newText");
     }
 }

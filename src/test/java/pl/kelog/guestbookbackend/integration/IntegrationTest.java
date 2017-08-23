@@ -11,8 +11,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import pl.kelog.guestbookbackend.EntryController;
-import pl.kelog.guestbookbackend.EntryDto;
+import pl.kelog.guestbookbackend.dto.CreateEntryDto;
+import pl.kelog.guestbookbackend.dto.EntryDto;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +31,7 @@ public class IntegrationTest {
     public void create_then_list() {
         ResponseEntity<EntryDto> response = restTemplate.postForEntity(
                 "/entry",
-                new EntryController.CreateEntryDto("newUsername1", "newText1"),
+                new CreateEntryDto("newUsername1", "newText1"),
                 EntryDto.class
         );
         
@@ -39,7 +39,7 @@ public class IntegrationTest {
         
         restTemplate.postForEntity(
                 "/entry",
-                new EntryController.CreateEntryDto("newUsername2", "newText2"),
+                new CreateEntryDto("newUsername2", "newText2"),
                 EntryDto.class
         );
         

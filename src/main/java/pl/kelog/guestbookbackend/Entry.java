@@ -12,21 +12,22 @@ public class Entry {
     
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
     
-    String username;
+    private String username;
     
-    String text;
+    private String text;
     
     
-    public Entry() {} // JPA
+    public Entry() { // JPA
+    }
     
-    public Entry(Long id, String username, String text) {
+    Entry(Long id, String username, String text) {
         this(username, text);
         this.id = id;
     }
     
-    public Entry(String username, String text) {
+    Entry(String username, String text) {
         this.username = username;
         this.text = text;
     }
