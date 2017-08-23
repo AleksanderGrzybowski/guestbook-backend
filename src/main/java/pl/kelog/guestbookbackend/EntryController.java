@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/")
+@CrossOrigin
 public class EntryController {
     private final EntryService service;
     
